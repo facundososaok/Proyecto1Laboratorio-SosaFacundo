@@ -16,7 +16,7 @@ namespace Proyecto1Laboratorio_SosaFacundo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new agregado());
             Console.WriteLine("Hola Mundo");
         }
     }

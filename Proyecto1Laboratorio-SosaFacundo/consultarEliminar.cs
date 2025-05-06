@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto1Laboratorio_SosaFacundo
 {
-    public partial class Form1 : Form
+    public partial class consultarEliminar : Form
     {
-        public Form1()
+        public consultarEliminar()
         {
             InitializeComponent();
         }
