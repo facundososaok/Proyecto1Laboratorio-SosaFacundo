@@ -29,7 +29,6 @@ namespace Proyecto1Laboratorio_SosaFacundo
             {
                 cmbCategoria.Items.Add(cat);
             }
-            cmbCategoria.SelectedIndexChanged += cmbCategoria_SelectedIndexChanged;
         }
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
