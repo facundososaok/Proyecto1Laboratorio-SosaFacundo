@@ -100,7 +100,7 @@ namespace Proyecto1Laboratorio_SosaFacundo
 
         public void CargarCategorias()
         {
-            cmbCategoria.Items.Clear(); // Limpiar si ya tenía datos
+            cmbCategoria.Items.Clear();
 
             List<Categoria> categorias = cnn.ObtenerCategorias();
 
