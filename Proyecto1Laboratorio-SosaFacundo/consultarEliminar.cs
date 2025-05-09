@@ -90,7 +90,6 @@ namespace Proyecto1Laboratorio_SosaFacundo
                 return;
             }
 
-            // Obtener el ID de la fila seleccionada
             int idProducto = Convert.ToInt32(dgvListado.SelectedRows[0].Cells["codigo"].Value);
 
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que querés eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo);
