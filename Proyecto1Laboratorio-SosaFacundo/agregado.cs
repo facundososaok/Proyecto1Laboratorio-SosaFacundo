@@ -68,18 +68,18 @@ namespace Proyecto1Laboratorio_SosaFacundo
 
             try
             {
-                // Crear una consulta SQL para insertar el nuevo producto
+
                 string query = "INSERT INTO productos (nombre, descripcion, precio, cod_categoria) VALUES (@nombre, @descripcion, @precio, @cod_categoria)";
 
                 MySqlCommand cmd = new MySqlCommand(query, cnn.ObtenerConexion());
 
-                // Agregar parámetros para evitar SQL Injection
+
                 cmd.Parameters.AddWithValue("@nombre", nombre);
                 cmd.Parameters.AddWithValue("@descripcion", descripcion);
                 cmd.Parameters.AddWithValue("@precio", precio);
                 cmd.Parameters.AddWithValue("@cod_categoria", categoriaSeleccionada);
 
-                // Ejecutar la consulta
+
                 int resultado = cmd.ExecuteNonQuery();
 
                 if (resultado > 0)
