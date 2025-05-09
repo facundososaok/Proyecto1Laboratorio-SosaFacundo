@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categoria.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="consultarEliminar.cs">
       <SubType>Form</SubType>

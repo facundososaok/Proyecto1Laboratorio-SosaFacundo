@@ -43,17 +43,15 @@ namespace Proyecto1Laboratorio_SosaFacundo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string nombre = txtNombre.Text;
+            string descripcion = txtDescripcion.Text;
+            decimal precio = int.Parse(txtPrecio.Text);
             if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtDescripcion.Text) || string.IsNullOrWhiteSpace(txtPrecio.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
                 return;
             }
 
-            string nombre = txtNombre.Text;
-            string descripcion = txtDescripcion.Text;
-            decimal precio = int.Parse(txtPrecio.Text);
-
-            // Verificar que el precio sea un número válido
             if (!decimal.TryParse(txtPrecio.Text, out precio))
             {
                 MessageBox.Show("El precio debe ser un número válido.");
@@ -100,24 +98,15 @@ namespace Proyecto1Laboratorio_SosaFacundo
 
         }
 
-        private void CargarCategorias()
+        public void CargarCategorias()
         {
-            try
-            {
-                string query = "SELECT nombre FROM categorias";
-                MySqlCommand cmd = new MySqlCommand(query, cnn.ObtenerConexion());
-                MySqlDataReader reader = cmd.ExecuteReader();
+            cmbCategoria.Items.Clear(); // Limpiar si ya tenía datos
 
-                while (reader.Read())
-                {
-                    cmbCategoria.Items.Add(reader.GetString("nombre"));
-                }
+            List<Categoria> categorias = cnn.ObtenerCategorias();
 
-                reader.Close(); // Muy importante cerrar el lector después
-            }
-            catch (Exception ex)
+            foreach (Categoria cat in categorias)
             {
-                MessageBox.Show("Error al cargar categorías: " + ex.Message);
+                cmbCategoria.Items.Add(cat);
             }
         }
     }
